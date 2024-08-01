@@ -14,6 +14,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     margin: 0;
+    flex-direction: column;
 }
 
 /* Container class to center content and set width */
@@ -24,6 +25,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
 /* Centered title */
@@ -32,7 +34,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Styling for textarea */
 textarea {
     width: 100%;
     margin-bottom: 20px;
