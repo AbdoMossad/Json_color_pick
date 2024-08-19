@@ -1,84 +1,110 @@
-/* Reset some default browser styles */
-body, h1, textarea, button {
+/* Global Styles */
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Set font and basic styles */
-body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f0f0f0;
-    margin: 0;
-    flex-direction: column;
+    min-height: 100vh;
 }
 
-/* Container class to center content and set width */
+/* Container for page content */
 .container {
-    width: 80%;
+    width: 90%;
     max-width: 800px;
-    background: #fff;
+    background-color: white;
     padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Editor section */
+.editor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Header */
+.editor h1 {
+    font-size: 24px;
     margin-bottom: 20px;
 }
 
-/* Centered title */
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-textarea {
+/* Color Picker Items */
+.color-picker-item {
     width: 100%;
-    margin-bottom: 20px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Flexbox for color pickers */
-.color-picker {
-    margin-bottom: 10px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
-.color-picker label {
-    margin-right: 10px;
-    width: 200px;
+.color-picker-item label {
+    font-size: 16px;
+    flex: 1;
 }
 
-/* Styling for buttons */
+.color-picker-item input[type="color"] {
+    flex: 1;
+    max-width: 100px;
+}
+
+/* Buttons */
 button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 10px 20px;
     background-color: #007bff;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-/* Styling for JSON output */
+/* JSON Output */
 pre {
-    margin-top: 20px;
-    background: #f6f6f6;
+    background-color: #f0f0f0;
+    padding: 15px;
+    border-radius: 4px;
+    width: 100%;
+    overflow-x: auto;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Textarea for JSON Input */
+textarea {
+    width: 100%;
     padding: 10px;
     border-radius: 4px;
-    white-space: pre-wrap;  /* Ensure JSON text wraps */
-    word-wrap: break-word;  /* Prevent long lines from overflowing */
+    border: 1px solid #ccc;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    resize: vertical;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .editor h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }
