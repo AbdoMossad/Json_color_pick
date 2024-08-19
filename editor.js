@@ -20,6 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         document.getElementById('output').textContent = JSON.stringify(updatedJson, null, 2);
     });
+    document.getElementById('back-button').addEventListener('click', function() {
+        window.location.href = 'index.html'; // Redirect to the JSON input page
+    });
+    
+    document.getElementById('copy-json').addEventListener('click', function() {
+        const output = document.getElementById('output').textContent;
+        
+        // Copy the JSON output to the clipboard
+        navigator.clipboard.writeText(output).then(() => {
+            alert('JSON copied to clipboard!');
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+        });
+    });
 });
 
 function createColorPicker(id, color) {
